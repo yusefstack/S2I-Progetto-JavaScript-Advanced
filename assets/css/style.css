@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('/PROJECT\ METEO/assets/img/v1-Minimal-view-wallpaper-pc-hd.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Secular One', sans-serif;
+}
+
+.page {
+    display: flex;
+    justify-content: space-around;
+}
+
+.material-symbols-outlined {
+    position: absolute;
+    left: 270px;
+    background: none;
+    color: rgba(54, 54, 54, 0.596);
+    cursor: pointer;
+}
+
+#titolo {
+    color: rgba(186, 138, 250, 0.479);
+    font-size: 50px;
+    text-align: center;
+    cursor: default;
+}
+
+.scores-box {
+    background: linear-gradient(135deg, rgba(137, 128, 128, 0.1), rgb(142, 142, 142));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+   
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    height: 615px;
+    width: 400px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.page-container-2 {
+    display: flex;
+    flex-direction:column;
+}
+
+.space-1 {
+    padding: 2em;
+    padding-bottom: 0;
+}
+
+.space-2 {
+    padding: 1em;
+    background: rgba(255, 255, 255, 0);
+}
+
+.box {
+    background: linear-gradient(135deg, rgba(137, 128, 128, 0.1), rgb(142, 142, 142));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+   
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    height: 400px;
+    width: 400px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+.minicontainer-1 {
+    padding: 1em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#logo {
+    width: 450px;
+    height: 90px;
+    margin: 0 auto;
+}
+
+.mini-box-1 {
+    width: 50%;
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(102, 102, 102, 0.453);
+    border-radius: 10px;
+    position: absolute;
+    right: 100px;
+    border: none;
+    color: rgba(59, 59, 59, 0.553);
+}
+
+.mini-box-1:focus {
+    border: 2px solid rgba(99, 141, 255, 0.386);
+    outline: none;
+}
+
+.minicontainer-2 {
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+.mini-box-2 {
+    padding: 4vh;
+    height: 180px;
+    width: 400px;
+    background: linear-gradient(135deg, rgba(137, 128, 128, 0.1), rgb(142, 142, 142));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    top: 20%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    margin: 0 auto;
+}
+
+.temperatureContainer, .mainWeatherContainer {
+    display: flex;
+    background: rgba(255, 255, 255, 0);
+    justify-content: space-between;
+}
+
+.Label-info {
+    background: rgba(255, 255, 255, 0);
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.Label {
+    background: rgba(255, 255, 255, 0);
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+
+.meteoImage {
+    background: rgba(255, 255, 255, 0);
+    display: block;
+}
+
+.meteoImage img {
+    background: rgba(255, 255, 255, 0);
+    width: 100%;
+    height: 100%;
+}
+
+.meteoImage {
+    background: rgba(255, 255, 255, 0);
+    height: 80px;
+    width: 80px;
+    margin: 0 auto;
+}
+
+.scores-box p, .scores-box b, .scores-box div, .scores-box h1 {
+    background: rgba(255, 255, 255, 0);
+}
+
+.scores-box h1 {
+    font-size: 30px;
+}
+
+.scores-box {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    padding: 1em;
+}
+
+.sum-container {
+    font-size: 16.5px;
+    padding: 1em;
+    background: rgba(255, 255, 255, 0);
+}
+
+.sum-container p, .sum-container b {
+    background: rgba(255, 255, 255, 0);
+}
