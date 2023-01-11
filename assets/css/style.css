@@ -268,6 +268,7 @@
     }
 
     .contacts-info {
+        margin: 0 auto;
         transform: none;
         width: 390px;
     }
@@ -292,6 +293,7 @@
     }
 
     #logo {
+        margin: 0 auto;
         width: 80%;
         height: 60%;
     }
