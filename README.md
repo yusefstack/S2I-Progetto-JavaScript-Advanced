@@ -6,7 +6,7 @@ Questa basic web app è stata realizzata al fine di dimostrare l'assimilazione d
 
 ## Reperibilità
 
-la web app è disponibile al seguente URL 
+la web app è disponibile al seguente URL https://lifestyleprogetto.netlify.app/
 
 ## Autori
 
