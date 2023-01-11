@@ -226,6 +226,22 @@
     width: 100%;
 }
 
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f0f58f;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(185, 184, 88);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(119, 110, 41);
+  }
+
 @media screen and (max-width: 900px) and (min-width: 200px) {
     .page {
         display: flex;
