@@ -11,7 +11,8 @@
 
 .page {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    position: relative;
 }
 
 .material-symbols-outlined {
@@ -93,7 +94,7 @@
 }
 
 .mini-box-1:focus {
-    border: 2px solid rgba(99, 141, 255, 0.386);
+    border: 2px solid rgba(255, 234, 99, 0.386);
     outline: none;
 }
 
@@ -169,11 +170,135 @@
 }
 
 .sum-container {
-    font-size: 16.5px;
+    font-size: 16px;
     padding: 1em;
     background: rgba(255, 255, 255, 0);
 }
 
-.sum-container p, .sum-container b {
+.sum-container p, .sum-container b, .sum-container i {
     background: rgba(255, 255, 255, 0);
+}
+
+.mobile-space {
+    display: none;
+}
+
+.contacts-info {
+    width: 98.5%;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(241, 218, 86, 0.418), rgba(204, 191, 46, 0.648));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin: 10px;
+    display: flex;
+    border-radius: 10px;
+}
+
+.contacts-info-container {
+    background: transparent;
+    margin: 0 auto;
+    display: flex;
+}
+
+.contacts-info p {
+    padding-top: 1em;
+    background: rgba(255, 255, 255, 0);
+    text-align: center;
+}
+
+.contacts-info img {
+    background: rgba(255, 0, 0, 0);
+    height: 30px;
+    width: 30px;
+}
+
+.contacts-icons {
+    padding-top: 10px;
+    background: rgba(255, 255, 255, 0);
+}
+
+.contacts-icons a {
+    background: rgba(255, 255, 255, 0);
+    color: transparent;
+}
+
+.page-container-3 {
+    width: 100%;
+}
+
+@media screen and (max-width: 900px) and (min-width: 200px) {
+    .page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-space {
+        display: block;
+        padding: 1.5em;
+    }
+
+    .minicontainer-1 {
+        width: 100%;
+    }
+
+    .minicontainer-2 {
+        margin-left: 0em;
+        margin-right: 0em;
+    }
+
+    .page-container-2 {
+        width: 390px;
+    }
+    .page-container-1 {
+        width: 390px;
+    }
+
+    #logo {
+        margin: 0 auto;
+        width: 100%;
+        height: 80%;
+    }
+
+    .scores-box, .box, .mini-box-2{
+        width: 100%;
+    }
+
+    .material-symbols-outlined {
+        left: 260px;
+    }
+
+    .contacts-info {
+        transform: none;
+        width: 390px;
+    }
+    
+}
+
+@media screen and (max-width: 895px) and (min-width: 391px) {
+    .page-container-1 {
+        width: 100%;
+    }
+
+    .page-container-2 {
+        width: 100%;
+    }
+
+    .box, .mini-box-2, .scores-box{
+        width: 500px;
+    }
+
+    .material-symbols-outlined {
+        left: 360px;
+    }
+
+    #logo {
+        width: 80%;
+        height: 60%;
+    }
+
+    .contacts-info {
+        transform: none;
+        width: 390px;
+        margin: 0 auto;
+    }
 }

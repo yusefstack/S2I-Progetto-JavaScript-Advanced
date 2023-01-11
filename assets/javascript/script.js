@@ -2,13 +2,10 @@
 let searchInput = document.querySelector(".mini-box-1");
 let searchButton = document.querySelector(".material-symbols-outlined");
 
-searchInput.onfocus = function() {
-    searchInput.value = "";
-}
-
-searchInput.onfocusout = function() {
-    searchInput.value = "Select a city";
-}
+searchInput.addEventListener("focus", () => {
+  searchInput.style.color = "rgba(255, 234, 99, 0.386)";
+  searchInput.value = "";
+})
 /* RICHIESTA API*/
 let dataInfo
 let infoBox = document.querySelector(".mini-box-2");
@@ -55,7 +52,7 @@ scoresBox.append(scoresTitle);
 scoresBox.append(scoresContainer);
 
 /*MODIFICA INFORMAZIONI*/ 
-searchButton.onclick = async function myFunc() {
+async function getInfo() {
     try {
         /*METEO API*/
         await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=60989e854ac353ccddccea69f54da948&units=metric`)
@@ -67,24 +64,32 @@ searchButton.onclick = async function myFunc() {
         mainWeather.innerHTML = `${dataInfo.weather[0].description}`;
         meteoImage.innerHTML = `<img src=https://openweathermap.org/img/w/${dataInfo.weather[0].icon}.png></img>`;
     } catch (error) {
-            temperatureLabel.innerHTML = "No data available now, we are sorry";
+            temperatureLabel.innerHTML = `Error: ${dataInfo.cod}`;
             temperature.innerHTML = ``;
             mainWeatherLabel.innerHTML = ``;
             mainWeather.innerHTML = ``;
             meteoImage.innerHTML = ``;
     }
         /*TELEPORT API*/
-        let cityNameNew;
-        for(let i = 0; i < searchInput.value.length; i++) {
-        if(searchInput.value[i] === ' '){
+
+      /*ANALISI PAROLA CON UN SOLO SPAZIO*/
+      let cityNameNew = searchInput.value.toLowerCase();
+      for(let i = 0; i < searchInput.value.length; i++) {
+      if(searchInput.value[i] === ' '){
           cityNameNew = searchInput.value.replace(' ', "-").toLowerCase();
+        }
+      }
+      /*ANALISI PAROLA CON 2 SPAZI*/
+      for(let i = 0; i < cityNameNew.length; i++) {
+        if(cityNameNew[i] === ' '){
+          cityNameNew = cityNameNew.replace(' ', "-").toLowerCase();
         }
       }
       let response = await fetch(`https://api.teleport.org/api/urban_areas/slug:${cityNameNew}/scores/`);
       let responseJson = await response.json();
-      if(responseJson.status == 404) {
-        sumContainer.innerHTML = 'No data available now, we are sorry';
-        scoresContainer.innerHTML = 'No data available now, we are sorry';
+      if(responseJson.status == 404 || responseJson.status == 200) {
+        sumContainer.innerHTML = `Error: ${responseJson.status}`;
+        scoresContainer.innerHTML = `Error: ${responseJson.status}`;
         return
       }
       sumContainer.innerHTML = responseJson.summary;
@@ -92,5 +97,20 @@ searchButton.onclick = async function myFunc() {
       for (let i = 0; i < responseJson.categories.length; i++) {
         scoresContainer.innerHTML += `${responseJson.categories[i].name}:&nbsp&nbsp&nbsp${responseJson.categories[i].score_out_of_10.toFixed(0)}</br>`;
       }
-      console.log(responseJson);
 }
+
+searchButton.addEventListener("click", getInfo);
+searchInput.addEventListener("keypress", function(event) {
+  if(event.key === 'Enter') {
+    getInfo();
+  }
+})
+searchInput.addEventListener("focusout", () => {
+  searchInput.style.color = "rgba(59, 59, 59, 0.553)";
+  }
+)
+searchInput.addEventListener("keypress", function(event) {
+  if(event.key === 'Enter') {
+    searchInput.style.color = "rgba(59, 59, 59, 0.553)";
+  }
+})
