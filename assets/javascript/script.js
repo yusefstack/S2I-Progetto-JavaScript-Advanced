@@ -87,7 +87,7 @@ async function getInfo() {
       }
       let response = await fetch(`https://api.teleport.org/api/urban_areas/slug:${cityNameNew}/scores/`);
       let responseJson = await response.json();
-      if(responseJson.status == 404 || responseJson.status == 200) {
+      if(responseJson.status == 404) {
         sumContainer.innerHTML = `Error: ${responseJson.status}`;
         scoresContainer.innerHTML = `Error: ${responseJson.status}`;
         return
